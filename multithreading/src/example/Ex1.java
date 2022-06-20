@@ -50,6 +50,16 @@ public class Ex1 {
         }
 
         // interrupt 방식
+        /*
+            interrupt(); 메서드는 종료하고자 하는 메서드가 일시 정지 상태일 때 정지 된다.
+            -Thread가 실행, 실행대기 상태일때 interrupt() 메서드 실행되면 즉시 Exception 발생 x,
+            Thread가 미래에 일시정지 상태가 되면 InterruptedException 예외가 발생함.
+
+            *즉 Thread가 일시 정지 상태가 되지 않으면 interrupt() 메서드 호출은 의미 x
+
+            * 예외 : isInterrupted(), interrupted()는 일시정지 상태가 필요 없음.
+         */
+
         ThreadA.interrupt();
         ThreadB.interrupt();
 
