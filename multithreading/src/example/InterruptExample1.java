@@ -46,4 +46,7 @@ public class InterruptExample1 extends Thread{
  * TestThread의 interrupt() 메서드 실행 -> TestThread가 sleep() 메서드로 일시 정지 상태가 되면
  * TestThread에서 interruptException이 발생됨 -> 예외 처리(catch) 블록으로 이동
  * 결과 : TestThread는 while 문을 빠져나옴. -> run()메서드를 정상 종료.
+ *
+ * 간편 : (mainThread) - TestThread.interrupt() --> (TestThread) -- 일시정지 상태 시 --> InterruptedException 발생 -> catch블록으로 이동
+ *
  */
