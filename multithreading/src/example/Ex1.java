@@ -1,4 +1,4 @@
-package thread;
+package example;
 /************
 * @info : java Thread 연습1
 * @name : Ex1
@@ -42,17 +42,14 @@ public class Ex1 {
         ThreadB.start();
         System.out.println("Thread B : " + ThreadB.getName());
 
-
         // Thread 종료
         try {
             Thread.sleep(3000); //3초 후 스레드 종료
-
         }catch (InterruptedException e){
             e.printStackTrace();
         }
 
         // interrupt 방식
-
         ThreadA.interrupt();
         ThreadB.interrupt();
 
