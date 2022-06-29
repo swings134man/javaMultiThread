@@ -36,5 +36,13 @@ public class MultiExecutor {
             thread.start();
         }
     }
-
 }
+/**
+ * 개요
+ *
+ * 해당 class의 Client는 Runnable 작업의 목록 생성 -> 해당 목록을 MultiExecutor의 생성자에게 제공
+ *
+ * Client가 executeAll() 실행 -> MultiExecutor가 주어진 모든 작업 실행
+ *
+ * 각 작업을 서로 다른 Thread로 전달하여 MultiExecutor가 모든 작업을 동시에 진행.
+ */
