@@ -10,13 +10,14 @@ public class JoinThread1 {
 
         th1.start();
         th2.start();
-        startTime = System.currentTimeMillis();
+        startTime = System.currentTimeMillis(); // 시작시간
 
         try {
             th1.join(); // main thread가 th1 작업이 끝날때 까지 기다린다.
             th2.join(); // main thread가 th2 작업이 끝날때 까지 기다린다.
         } catch (InterruptedException e) {}
 
+        // th1. th2 작업이 종료되면 main thread가 실행됨. 아래 code
         System.out.println("소요시간 : " + (System.currentTimeMillis() - startTime));
     }//main
 

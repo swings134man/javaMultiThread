@@ -1,4 +1,4 @@
-package functionOfThread;
+package thread;
 
 public class MakeThread1 {
 
