@@ -29,7 +29,7 @@ private static class GuguTimer extends Thread {
 
         System.out.println("구구단 게임 시작! 제한시간 60초!");
         game.start();
-        for(int i=10; i>0; i--) {
+        for(int i=60; i>0; i--) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
