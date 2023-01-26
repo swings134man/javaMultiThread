@@ -52,14 +52,14 @@ private static class GameGugu extends Thread {
     public void run() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("문제가 주어지면 5초 안에 맞추세요!");
+        System.out.println("시작!");
         while (true) {
             Random random = new Random();
             int fir = random.nextInt(100);
             int sec = random.nextInt(10);
             int result = fir * sec;
 
-            System.out.println(fir + " X " + sec + " 정답은?");
+            System.out.println((Thread_Game2.proNum+1)+ "번" + "--->" + fir + " X " + sec + " 정답은?");
             int inRes = sc.nextInt();
 
             if(inRes == result) {
