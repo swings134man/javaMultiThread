@@ -8,15 +8,21 @@ import java.util.Random;
  * @date : 11/12/23 5:22 PM
  * @author : SeokJun Kang(swings134@gmail.com)
  * @version : 1.0.0
- * @Description : 
+ * @Description : 특정 연산이 동기화 없이 안전하게 수행 될 수 있도록 보장하는 키워드 테스트 - volatile
+ * - volatile 키워드가 붙은 변수는, 해당 변수에 접근할 때 CPU cache 를 거치지 않고, main memory 에 직접 접근함.
+ *      -> 그렇지 않은 변수의 경우 CPU의 Cache 에서 값을 읽어오기 때문에, 다른 Thread 가 해당 변수의 값을 변경하더라도, Cache 에 저장된 값이 변경되지 않음. -> 즉 동시성 문제 발생여지 존재.
+ *
+ * - 그렇다고 하더라도 1개 이상의 Thread 에서 동시에 접근하여 read & write 를 수행하는 경우 synchronized 키워드를 사용하여, 원자성(Atomic) 을 보장해야 한다.
+ *
+ * ->
  ************/
 public class Volatile_1 {
 
     public static void main(String[] args) {
         Metrics metrics = new Metrics();
 
-        BusinessLogic businessLogicThread1 = new BusinessLogic(metrics); // 연산 수행
-        BusinessLogic businessLogicThread2 = new BusinessLogic(metrics); // 연산 수행
+        BusinessLogic businessLogicThread1 = new BusinessLogic(metrics); // 연산 수행 1
+        BusinessLogic businessLogicThread2 = new BusinessLogic(metrics); // 연산 수행 2
         MetricsPrinter metricsPrinter = new MetricsPrinter(metrics); // 연산 출력
 
         businessLogicThread1.start();
