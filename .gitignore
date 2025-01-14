@@ -1,0 +1,7 @@
+# git ignore FIle
+
+/out
+
+/.idea
+*.iml
+
