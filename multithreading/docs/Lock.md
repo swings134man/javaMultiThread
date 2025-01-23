@@ -30,3 +30,10 @@ public class Sample {
     }
 }
 ```
+
+---
+### Reentrant Read Write Lock
+- 일반적으로 DB, Cache 와 같이 Read Thread 가 많고, Write Thread 가 적은 경우
+  - Reentrant Lock 을 사용하면, Read Thread 가 Write Thread 를 기다리는 상황이 발생할 수 있다.
+  - 이런경우 Read Lock, Write Lock 이 분리 되어있는 Reentrant Read Write Lock 을 사용하면 효율적이다.
+- Read Lock 은 여러 Thread 가 동시에 접근할 수 있지만, Write Lock 은 단 하나의 Thread 만 접근할 수 있다.
